@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Nunito", sans-serif;
+  --color-daraz-orange: #FF6000;
+  --color-daraz-dark: #1A1A2E;
+  --color-daraz-red: #E40046;
+  --color-daraz-green: #00B517;
+  --color-daraz-bg: #F5F5F5;
+}
+
+@layer base {
+  body {
+    @apply bg-daraz-bg text-gray-800 font-sans;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
