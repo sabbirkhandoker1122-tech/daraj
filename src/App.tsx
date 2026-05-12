@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, ReactNode } from 'react';
 import { 
   Search, 
   User, 
@@ -196,7 +196,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4 md:gap-8">
             {/* Logo */}
             <div className="flex-shrink-0 cursor-pointer">
-              <span className="text-3xl font-black text-daraz-orange font-heading italic tracking-tighter">daraz</span>
+              <span className="text-3xl font-black text-daraz-orange font-heading italic tracking-tighter">sabbir</span>
             </div>
 
             {/* Search */}
@@ -204,7 +204,7 @@ export default function App() {
               <div className="flex border-2 border-daraz-orange rounded-lg overflow-hidden focus-within:ring-2 ring-daraz-orange/20">
                 <input 
                   type="text" 
-                  placeholder="Search in Daraz..."
+                  placeholder="Search in Sabbir..."
                   className="w-full px-4 py-2 outline-none"
                 />
                 <button className="bg-daraz-orange text-white px-6 hover:bg-orange-600 transition-colors">
@@ -386,11 +386,11 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. Daraz Mall */}
+        {/* 6. Sabbir Mall */}
         <section className="mt-12 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold flex items-center gap-2">
-              <span className="text-blue-600">🏪</span> Daraz Mall — Official Stores
+              <span className="text-blue-600">🏪</span> Sabbir Mall — Official Stores
             </h2>
             <button className="text-daraz-orange font-bold text-sm hover:underline">VIEW ALL</button>
           </div>
@@ -464,7 +464,7 @@ export default function App() {
         <section className="mt-20 bg-gradient-to-r from-orange-400 to-daraz-orange rounded-3xl p-8 md:p-12 text-white overflow-hidden relative">
           <div className="grid md:grid-cols-2 gap-8 items-center relative z-10 text-center md:text-left">
             <div>
-              <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight">Shop Smarter on the Daraz App</h2>
+              <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight">Shop Smarter on the Sabbir App</h2>
               <ul className="mb-8 space-y-3 opacity-90 font-medium">
                 <li className="flex items-center gap-3 justify-center md:justify-start">✓ Get App-only deals & coupons</li>
                 <li className="flex items-center gap-3 justify-center md:justify-start">✓ Faster checkout & real-time tracking</li>
@@ -481,7 +481,7 @@ export default function App() {
             </div>
             <div className="hidden md:flex justify-center">
               <div className="w-64 h-[400px] bg-white rounded-[3rem] border-8 border-gray-900 shadow-2xl p-6 relative flex flex-col items-center justify-center -rotate-12 translate-y-20">
-                <span className="text-4xl font-black text-daraz-orange italic">daraz</span>
+                <span className="text-4xl font-black text-daraz-orange italic">sabbir</span>
                 <div className="mt-12 w-full space-y-4">
                   <div className="w-full h-8 bg-gray-100 rounded"></div>
                   <div className="w-3/4 h-8 bg-gray-100 rounded"></div>
@@ -499,7 +499,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
           {/* Col 1 */}
           <div>
-            <span className="text-3xl font-black text-daraz-orange font-heading italic tracking-tighter mb-4 block">daraz</span>
+            <span className="text-3xl font-black text-daraz-orange font-heading italic tracking-tighter mb-4 block">sabbir</span>
             <p className="text-gray-400 text-sm mb-6">Bangladesh's #1 Online Shopping Platform. Connecting millions of buyers and sellers across South Asia.</p>
             <div className="flex gap-4">
               <span className="bg-white/10 p-2 rounded-lg cursor-pointer hover:bg-daraz-orange transition-colors"><Facebook size={20} /></span>
@@ -512,7 +512,7 @@ export default function App() {
           {/* Col 2 */}
           <div className="space-y-4">
             <h4 className="font-bold text-lg mb-6">Customer Care</h4>
-            {["Help Center", "How to Buy", "Return & Refund", "Shipping & Delivery", "Contact Us", "Daraz Blog"].map(item => (
+            {["Help Center", "How to Buy", "Return & Refund", "Shipping & Delivery", "Contact Us", "Sabbir Blog"].map(item => (
               <a key={item} href="#" className="block text-gray-400 text-sm hover:text-white transition-colors">{item}</a>
             ))}
           </div>
@@ -532,7 +532,7 @@ export default function App() {
 
           {/* Col 4 */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Download Our App</h4>
+            <h4 className="font-bold text-lg mb-6">Sabbir App</h4>
             <div className="space-y-4">
               <div className="bg-white/5 border border-white/10 p-4 rounded-xl flex items-center gap-3 group cursor-pointer hover:bg-white/10 transition-colors">
                 <Smartphone className="text-daraz-orange" />
@@ -552,7 +552,7 @@ export default function App() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-white/10 text-center text-gray-500 text-sm">
-          © 2025 Daraz Bangladesh Ltd. All Rights Reserved. | Privacy Policy | Terms of Use
+          © 2025 Sabbir Bangladesh Ltd. All Rights Reserved. | Privacy Policy | Terms of Use
         </div>
       </footer>
 
@@ -661,7 +661,8 @@ function ProductCard({
   addToCart: (p: Product) => void,
   toggleWishlist: (id: number) => void,
   isWishlisted: boolean,
-  compact?: boolean
+  compact?: boolean,
+  key?: number | string
 }) {
   return (
     <motion.div 
@@ -717,7 +718,7 @@ function ProductCard({
   );
 }
 
-function TrustItem({ icon, label, sub }: { icon: React.ReactNode, label: string, sub: string }) {
+function TrustItem({ icon, label, sub }: { icon: ReactNode, label: string, sub: string }) {
   return (
     <div className="flex flex-col items-center text-center group cursor-pointer">
       <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
